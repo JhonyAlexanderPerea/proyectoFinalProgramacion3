@@ -1,4 +1,4 @@
-module com.example.proyectofinalprogramacion3 {
+module java {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -11,6 +11,5 @@ module com.example.proyectofinalprogramacion3 {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.example.proyectofinalprogramacion3 to javafx.fxml;
-    exports com.example.proyectofinalprogramacion3;
+
 }

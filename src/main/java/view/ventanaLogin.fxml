@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -29,12 +30,22 @@
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <font>
+            <Font name="Futura Book BT" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
       </TextField>
       <Button fx:id="btnIngresar" layoutX="126.0" layoutY="360.0" mnemonicParsing="false" text="Ingresar">
          <font>
             <Font name="Futura Book BT" size="14.0" />
          </font>
       </Button>
-      <PasswordField fx:id="txtContrasenia" layoutX="28.0" layoutY="281.0" prefHeight="25.0" prefWidth="265.0" />
+      <PasswordField fx:id="txtContrasenia" layoutX="28.0" layoutY="281.0" prefHeight="25.0" prefWidth="265.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </PasswordField>
    </children>
 </AnchorPane>

@@ -37,7 +37,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Button fx:id="btnIngresar" layoutX="126.0" layoutY="360.0" mnemonicParsing="false" text="Ingresar">
+      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="28.0" layoutY="374.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: green;" text="Ingresar">
          <font>
             <Font name="Futura Book BT" size="14.0" />
          </font>
@@ -47,5 +47,10 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </PasswordField>
+      <Button fx:id="btnCancelar" blendMode="MULTIPLY" layoutX="165.0" layoutY="374.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: red;" text="Cancelar">
+         <font>
+            <Font name="Futura Book BT" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

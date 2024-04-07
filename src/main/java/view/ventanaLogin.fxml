@@ -6,27 +6,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="456.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
+<AnchorPane prefHeight="456.0" prefWidth="318.0" style="-fx-background-color: rgba(199,199,199,0.73);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
    <children>
-      <Label fx:id="lblLogin" layoutX="120.0" layoutY="14.0" prefHeight="29.0" prefWidth="79.0" text="LOGIN">
+      <Label fx:id="lblLogin" layoutX="48.0" layoutY="14.0" prefHeight="35.0" prefWidth="226.0" text="INICIO DE SESIÓN">
          <font>
-            <Font name="Futura Book BT" size="24.0" />
+            <Font name="HelveticaRounded-Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="lblUsuario" layoutX="112.0" layoutY="121.0" prefHeight="29.0" prefWidth="97.0" text="Ususario">
+      <Label fx:id="lblUsuario" layoutX="52.0" layoutY="92.0" prefHeight="29.0" prefWidth="79.0" text="Ususario">
          <font>
-            <Font name="Futura Book BT" size="24.0" />
+            <Font name="HelveticaRounded-Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblContrasenia" layoutX="97.0" layoutY="239.0" prefHeight="29.0" prefWidth="127.0" text="Contraseña" textAlignment="CENTER">
+      <Label fx:id="lblContrasenia" layoutX="52.0" layoutY="190.0" prefHeight="29.0" prefWidth="109.0" text="Contraseña" textAlignment="CENTER">
          <font>
-            <Font name="Futura Book BT" size="24.0" />
+            <Font name="HelveticaRounded-Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsuario" layoutX="27.0" layoutY="166.0" prefHeight="25.0" prefWidth="265.0" styleClass="transparent">
+      <TextField fx:id="txtUsuario" layoutX="27.0" layoutY="121.0" prefHeight="25.0" prefWidth="265.0" styleClass="transparent">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -36,21 +40,54 @@
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <effect>
+            <Bloom />
+         </effect>
       </TextField>
-      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="28.0" layoutY="374.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: green;" text="Ingresar">
+      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="61.0" layoutY="319.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #bbb3b3; -fx-background-radius: 13; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 14;" text="Ingresar">
          <font>
             <Font name="Futura Book BT" size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <PasswordField fx:id="txtContrasenia" layoutX="28.0" layoutY="281.0" prefHeight="25.0" prefWidth="265.0">
+      <PasswordField fx:id="txtContrasenia" layoutX="27.0" layoutY="219.0" prefHeight="25.0" prefWidth="265.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
+         <effect>
+            <Bloom />
+         </effect>
       </PasswordField>
-      <Button fx:id="btnCancelar" blendMode="MULTIPLY" layoutX="165.0" layoutY="374.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: red;" text="Cancelar">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="27.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/iconoCandado.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="27.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/iconoUsuario.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnCrearCuenta" layoutX="96.0" layoutY="388.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="127.0" style="-fx-background-color: tramsparent; -fx-text-fill: black; -fx-background-radius: 13; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 13;" text="Crear una cuenta">
          <font>
-            <Font name="Futura Book BT" size="14.0" />
+            <Font name="HelveticaRounded-Bold" size="14.0" />
          </font>
+         <effect>
+            <Glow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnOlvideContrasenia" layoutX="102.0" layoutY="245.0" minHeight="20.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="197.0" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 13; -fx-background-radius: 13;" text="¿Olvidaste tu contraseña?">
+         <font>
+            <Font name="HelveticaRounded-Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

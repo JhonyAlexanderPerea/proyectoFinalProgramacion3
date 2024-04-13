@@ -12,6 +12,6 @@
             <Font name="Work Sans SemiBold" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="358.0" layoutY="508.0" mnemonicParsing="false" text="Iniciar sesion" />
+      <Button fx:id="btnIniciarSesion" layoutX="358.0" layoutY="508.0" mnemonicParsing="false" onAction="#abrirViewInicioSesion" text="Iniciar sesion" />
    </children>
 </AnchorPane>

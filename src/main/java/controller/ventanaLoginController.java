@@ -16,6 +16,8 @@ public class ventanaLoginController {
 
     private Stage stage;
 
+    private ventanaPrincipalController principioController;
+
     @FXML
     private Button btnCrearCuenta;
 
@@ -61,6 +63,14 @@ public class ventanaLoginController {
 
     }
 
+    public void setAplicacion(App aplicacion) {
+        this.app = aplicacion;
+    }
+
+    public void init(Stage stage, ventanaPrincipalController principalController) {
+        this.principioController = principalController;
+        this.stage = stage;
+    }
 }
 
 

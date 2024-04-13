@@ -7,39 +7,49 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class App extends Application {
 
     private Stage primaryStage;
 
+
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
-        primaryStage.setTitle("Ventana Principal");
+        System.gc();
+        // primaryStage.setTitle("Concesionario");
         mostrarVentanaPrincipal();
+
     }
 
-    private void mostrarVentanaPrincipal()throws IOException{
+    private void mostrarVentanaPrincipal() throws IOException {
+        //Se establece la ruta de la ventana que desea ejecutar
         try {
-            // Cargar el archivo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ventanaPrincipal.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/view/ventanaPrincipal.fxml"));
             AnchorPane anchorPane = loader.load();
+            ventanaPrincipalController principalController = loader.getController();
+            principalController.setAplicacion(this);
 
-            // Obtener el controlador y pasar la referencia de la aplicación
-            ventanaPrincipalController controller = loader.getController();
-            controller.setAplicacion(this);
-
-            // Crear la escena y establecerla en el escenario primario
             Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
             primaryStage.show();
+            ventanaPrincipalController controller = loader.getController();
+            controller.setStage(primaryStage);
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Error al cargar la ventana principal. Motivo: " + e.getMessage());
         }
     }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

@@ -89,5 +89,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button fx:id="btnLimpiarCampos" layoutX="21.0" layoutY="248.0" minWidth="29.0" mnemonicParsing="false" onAction="#limpiarCampos" prefHeight="30.0" prefWidth="29.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fx:id="imgLimpiar" fitHeight="23.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/iconoLimpiar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

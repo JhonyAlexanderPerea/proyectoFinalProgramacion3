@@ -51,8 +51,6 @@ public class ventanaLoginController {
         txtUsuario.setText("");
         txtContrasenia.setText("");
     }
-
-
 }
 
 

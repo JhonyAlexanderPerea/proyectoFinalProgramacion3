@@ -24,7 +24,7 @@ public class App extends Application {
     private void mostrarVentanaPrincipal()throws IOException{
         try {
             // Cargar el archivo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ventanaLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ventanaPrincipal.fxml"));
             AnchorPane anchorPane = loader.load();
 
             // Obtener el controlador y pasar la referencia de la aplicación

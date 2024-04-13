@@ -1,6 +1,6 @@
 package controller;
 
-import application.Aplicacion;
+import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class ventanaPrincipalController {
 
 
-    private Aplicacion aplicacion;
+    private App aplicacion;
     private Stage stage;
 
     @FXML
@@ -22,8 +22,8 @@ public class ventanaPrincipalController {
     }
 
 
-    public void setAplicacion(Aplicacion aplicacion) {
-        this.aplicacion = aplicacion;
+    public void setAplicacion(App app) {
+        this.aplicacion = app;
     }
 
     public void setStage(Stage primaryStage) {

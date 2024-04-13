@@ -1,7 +1,7 @@
 package application;
 
-
-import controller.ventanaLoginController;
+//import com.gluonhq.charm.glisten.application.MobileApplication;
+import controller.ventanaPrincipalController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Aplicacion extends Application {
+public class App extends Application {
 
     private Stage primaryStage;
 
@@ -28,7 +28,7 @@ public class Aplicacion extends Application {
             AnchorPane anchorPane = loader.load();
 
             // Obtener el controlador y pasar la referencia de la aplicación
-            ventanaLoginController controller = loader.getController();
+            ventanaPrincipalController controller = loader.getController();
             controller.setAplicacion(this);
 
             // Crear la escena y establecerla en el escenario primario
@@ -44,5 +44,3 @@ public class Aplicacion extends Application {
         launch(args);
     }
 }
-
-

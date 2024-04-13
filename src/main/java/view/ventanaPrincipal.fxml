@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgba(199,199,199,0.73);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaPrincipalController">
-
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaPrincipalController">
+   <children>
+      <Label layoutX="50.0" layoutY="24.0" prefHeight="49.0" prefWidth="715.0" text="INICIO DE SESIÓN">
+         <font>
+            <Font name="Work Sans SemiBold" size="36.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

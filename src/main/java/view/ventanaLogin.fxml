@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="456.0" prefWidth="318.0" style="-fx-background-color: rgba(199,199,199,0.73);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
+<AnchorPane prefHeight="510.0" prefWidth="345.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
    <children>
-      <Label fx:id="lblLogin" layoutX="48.0" layoutY="14.0" prefHeight="35.0" prefWidth="226.0" text="INICIO DE SESIÓN">
+      <Label fx:id="lblLogin" layoutX="60.0" layoutY="14.0" prefHeight="35.0" prefWidth="226.0" text="INICIO DE SESIÓN">
          <font>
             <Font name="HelveticaRounded-Bold" size="24.0" />
          </font>
@@ -30,7 +30,7 @@
             <Font name="HelveticaRounded-Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsuario" layoutX="27.0" layoutY="121.0" prefHeight="25.0" prefWidth="265.0" styleClass="transparent">
+      <TextField fx:id="txtUsuario" layoutX="27.0" layoutY="121.0" prefHeight="25.0" prefWidth="265.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -44,7 +44,7 @@
             <Bloom />
          </effect>
       </TextField>
-      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="61.0" layoutY="319.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #bbb3b3; -fx-background-radius: 13; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 14;" text="Ingresar">
+      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="74.0" layoutY="341.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="197.0" styleClass="boton-ingresar" stylesheets="@../resources/style/style.css" text="Ingresar">
          <font>
             <Font name="Futura Book BT" size="14.0" />
          </font>
@@ -70,7 +70,7 @@
             <Image url="@../resources/images/iconoUsuario.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnCrearCuenta" layoutX="96.0" layoutY="388.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="127.0" style="-fx-background-color: tramsparent; -fx-text-fill: black; -fx-background-radius: 13; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 13;" text="Crear una cuenta">
+      <Button fx:id="btnCrearCuenta" layoutX="100.0" layoutY="412.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="145.0" style="-fx-background-color: tramsparent; -fx-text-fill: black; -fx-background-radius: 13; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 13;" text="Crear una cuenta">
          <font>
             <Font name="HelveticaRounded-Bold" size="14.0" />
          </font>
@@ -81,7 +81,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btnOlvideContrasenia" layoutX="102.0" layoutY="245.0" minHeight="20.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="197.0" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 13; -fx-background-radius: 13;" text="¿Olvidaste tu contraseña?">
+      <Button fx:id="btnOlvideContrasenia" layoutX="109.0" layoutY="246.0" minHeight="20.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="197.0" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 13; -fx-background-radius: 13;" text="¿Olvidaste tu contraseña?">
          <font>
             <Font name="HelveticaRounded-Bold" size="14.0" />
          </font>

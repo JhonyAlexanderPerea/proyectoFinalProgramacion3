@@ -1,60 +1,47 @@
 package application;
 
-
-import java.io.IOException;
-
-import controller.ventanaPrincipalController;
+import controller.ventanaLoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 
-public class Aplicacion extends Application{
+public class Aplicacion extends Application {
 
-    //Solo puede existir una instancia de la clase principal, en este caso tenemos una sola intancia
-    //de la clase concesionario
     private Stage primaryStage;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        this.primaryStage= primaryStage;
-        System.gc();
-        primaryStage.setTitle("Ventana login");
+    public void start(Stage primaryStage) throws IOException {
+        this.primaryStage = primaryStage;
+        primaryStage.setTitle("Ventana Principal");
         mostrarVentanaPrincipal();
-
     }
 
-    private void mostrarVentanaPrincipal() throws IOException {
-        //Se establece la ruta de la ventana que desea ejecutar
-        try{
-            FXMLLoader loader= new FXMLLoader();
-            loader.setLocation(Aplicacion.class.getResource("../view/ventanaPrincipal.fxml"));
-            AnchorPane anchorPane= loader.load();
-            ventanaPrincipalController principalController = loader.getController();
-            principalController.setAplicacion(this);
+    private void mostrarVentanaPrincipal()throws IOException{
+        try {
+            // Cargar el archivo FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ventanaLogin.fxml"));
+            AnchorPane anchorPane = loader.load();
 
-            Scene scene= new Scene(anchorPane);
+            // Obtener el controlador y pasar la referencia de la aplicación
+            ventanaLoginController controller = loader.getController();
+            controller.setAplicacion(this);
+
+            // Crear la escena y establecerla en el escenario primario
+            Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
             primaryStage.show();
-            ventanaPrincipalController controller= loader.getController();
-            controller.setStage(primaryStage);
-        }catch(IOException e){
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Error al cargar la ventana principal. Motivo: " + e.getMessage());
         }
     }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
-
-    public void setPrimaryStage(Stage primaryStage) {
-        this.primaryStage = primaryStage;
-    }
-
     public static void main(String[] args) {
         launch(args);
-
     }
-
 }
+
+

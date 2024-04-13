@@ -11,5 +11,8 @@ module java {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    exports  application;
+    exports application;
+    exports model;
+
+    opens controller;
 }

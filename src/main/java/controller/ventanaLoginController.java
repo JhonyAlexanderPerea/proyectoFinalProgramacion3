@@ -51,6 +51,19 @@ public class ventanaLoginController {
         txtUsuario.setText("");
         txtContrasenia.setText("");
     }
+
+
+    public void setAplicacion(Aplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+    }
+
+    public void setStage(Stage primaryStage) {
+        stage = primaryStage;
+    }
+
+    public void show() {
+        stage.show();
+    }
 }
 
 

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="510.0" prefWidth="345.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
+<AnchorPane prefHeight="510.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
    <children>
       <Label fx:id="lblLogin" layoutX="60.0" layoutY="14.0" prefHeight="35.0" prefWidth="226.0" text="INICIO DE SESIÓN">
          <font>
@@ -44,7 +44,7 @@
             <Bloom />
          </effect>
       </TextField>
-      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="74.0" layoutY="341.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="197.0" styleClass="boton-ingresar" stylesheets="@../resources/style/style.css" text="Ingresar">
+      <Button fx:id="btnIngresar" blendMode="MULTIPLY" layoutX="74.0" layoutY="341.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #bbb3b3; -fx-background-radius: 13; -fx-font-family: 'Helvetica Rounded'; -fx-font-size: 14;" styleClass="boton-ingresar" text="Ingresar">
          <font>
             <Font name="Futura Book BT" size="14.0" />
          </font>

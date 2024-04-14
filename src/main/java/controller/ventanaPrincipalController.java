@@ -14,7 +14,10 @@ public class ventanaPrincipalController {
 
 
     private App aplicacion;
+
     private Stage stage;
+
+    private ventanaLoginController ventanaLoginController;
 
     @FXML
     void cerrarPrincipal(ActionEvent event) {
@@ -52,5 +55,10 @@ public class ventanaPrincipalController {
         loginController.init(stage, this);
         stage.show();
         this.stage.close();
+    }
+
+    public void init(Stage stage, ventanaLoginController loginController) {
+        this.ventanaLoginController = loginController;
+        this.stage = stage;
     }
 }

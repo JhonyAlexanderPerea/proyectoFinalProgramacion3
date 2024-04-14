@@ -1,8 +1,6 @@
 package Networking;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 public class clienteArchivos {
@@ -31,6 +29,34 @@ public class clienteArchivos {
             // TODO
         }
     }
+    public void enviarArchivo(String rutaArchivo) {
+        try {
+            // Abrir el archivo
+            FileInputStream fileInputStream = new FileInputStream(rutaArchivo);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+
+            // Obtener el tamaño del archivo
+            long tamanoArchivo = fileInputStream.available();
+
+            // Enviar el nombre del archivo y su tamaño al servidor
+            flujoSalida.writeUTF(new File(rutaArchivo).getName());
+            flujoSalida.writeLong(tamanoArchivo);
+
+            // Crear un buffer para leer el archivo en bloques
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = bufferedInputStream.read(buffer)) != -1) {
+                // Escribir los bytes en el flujo de salida
+                flujoSalida.write(buffer, 0, bytesRead);
+            }
+
+            // Cerrar recursos
+            bufferedInputStream.close();
+            fileInputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void cerrarRecursos() {
         try {
@@ -41,6 +67,7 @@ public class clienteArchivos {
             e.printStackTrace();
         }
     }
+
 
     public DataInputStream getFlujoEntrada() {
         return flujoEntrada;

@@ -69,6 +69,20 @@ public class ventanaLoginController {
         this.stage.close();
     }
 
+    public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader();
+        loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
+        AnchorPane anchorPane= (AnchorPane)loader.load();
+        ventanaPrincipalController principalController= loader.getController();
+        principalController.setApp(app);
+        Scene scene= new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Login Empleado");
+        principalController.init(stage, this);
+        stage.show();
+        this.stage.close();
+    }
     @FXML
     void limpiarCampos(ActionEvent event) {
         txtUsuario.setText("");
@@ -87,21 +101,6 @@ public class ventanaLoginController {
     public void init(Stage stage, ventanaPrincipalController principalController) {
         this.principioController = principalController;
         this.stage = stage;
-    }
-
-    public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader= new FXMLLoader();
-        loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
-        AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaPrincipalController principalController= loader.getController();
-        principalController.setApp(app);
-        Scene scene= new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Login Empleado");
-        principalController.init(stage, this);
-        stage.show();
-        this.stage.close();
     }
 }
 

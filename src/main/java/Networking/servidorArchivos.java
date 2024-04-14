@@ -58,7 +58,7 @@ public class servidorArchivos {
         try {
             int bytes = 0;
             FileOutputStream flujoSalidaArchivo = new FileOutputStream(
-                    "C:\\Users\\lenovo\\Documents\\grupo_dia\\feed_de_entrada\\ETC\\cargado1.txt");
+                    "C:\\Users\\JHONY\\Desktop");
             long tamaño = this.flujoEntrada.readLong();
             byte[] buffer = new byte[4 * 1024];
             while(

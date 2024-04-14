@@ -1,7 +1,7 @@
 package controller;
 
+import Networking.ServerMain;
 import Networking.clienteArchivos;
-import Networking.ServidorTask;
 import application.App;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -29,6 +29,7 @@ public class ventanaPublicacionesController {
 
     private Application app;
 
+
     @FXML
     void escogerArchivo(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
@@ -42,6 +43,7 @@ public class ventanaPublicacionesController {
         }
     }
 
+
     @FXML
     void subirArchivo(ActionEvent event) {
         // Verificar si se ha seleccionado un archivo
@@ -53,60 +55,25 @@ public class ventanaPublicacionesController {
         }
 
         // Llamar a los métodos para conectar el cliente y el servidor
-        conectarServidor();
-       // conectarCliente();
 
         String direccionIP = "127.0.0.1"; // Dirección IP del servidor
-        int puerto = 8080; // Puerto del servidor
+        int puerto = 10; // Puerto del servidor
+
 
         // Crear cliente de archivos y establecer la conexión con el servidor
         clienteArchivos cliente = new clienteArchivos(direccionIP, puerto);
-        if (cliente.iniciarConexionConServidor()) {
             try {
-                // Enviar el nombre del archivo al servidor
-                cliente.getFlujoSalida().writeUTF(nombreArchivo);
-
                 // Llamar al método para enviar el archivo
-                cliente.enviarArchivo(nombreArchivo);
+                cliente.enviarArchivo(new File(nombreArchivo));
 
                 // Notificar al usuario que el archivo se ha enviado
                 System.out.println("Archivo enviado con éxito.");
-            } catch (IOException e) {
+            } catch (Exception e) {
+                System.err.println("Error al conectar con el servidor.");
                 System.err.println("Error al enviar el archivo: " + e.getMessage());
-            } finally {
-                // Cerrar la conexión con el servidor
-                cliente.cerrarRecursos();
             }
-        } else {
-            System.err.println("Error al conectar con el servidor.");
-        }
     }
 
-    // Métodos para conectar cliente y servidor
-   /* public void conectarCliente() {
-        String direccionIPServidor = "127.0.0.1"; // Dirección IP del servidor
-        int puerto = 8080; // Puerto del servidor
-
-        // Crear cliente de archivos
-        clienteArchivos cliente = new clienteArchivos(direccionIPServidor, puerto);
-        // Iniciar la conexión con el servidor
-        if (cliente.iniciarConexionConServidor()) {
-            System.out.println("Conexión establecida con el servidor.");
-            // Cerrar la conexión después de la verificación
-            cliente.cerrarRecursos();
-        } else {
-            System.err.println("Error al conectar con el servidor.");
-        }
-    }*/
-
-    public void conectarServidor() {
-        int puerto = 8080; // Puerto del servidor
-
-        ServidorTask servidorTask = new ServidorTask(puerto);
-        Thread thread = new Thread(servidorTask);
-        thread.setDaemon(true); // Hacer que el hilo sea daemon
-        thread.start();
-    }
 
     public void init(Stage stage, ventanaLoginController ventanaLoginController) {
     }
@@ -115,5 +82,9 @@ public class ventanaPublicacionesController {
         this.app = app;
     }
 
+    public void montarServidor(ActionEvent actionEvent) {
+        Thread hiloServer = new Thread( () -> ServerMain.montar());
+        hiloServer.start();
+    }
 }
 

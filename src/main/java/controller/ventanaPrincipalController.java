@@ -51,7 +51,7 @@ public class ventanaPrincipalController {
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login Empleado");
+        stage.setTitle("Login");
         loginController.init(stage, this);
         stage.show();
         this.stage.close();

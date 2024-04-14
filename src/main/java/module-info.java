@@ -11,6 +11,7 @@ module java {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires static lombok;
 
     exports application;
     exports model;
@@ -18,4 +19,5 @@ module java {
 
     opens controller;
     opens view;
+    opens Networking;
 }

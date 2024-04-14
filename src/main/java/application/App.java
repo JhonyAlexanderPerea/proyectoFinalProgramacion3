@@ -31,7 +31,6 @@ public class App extends Application {
             AnchorPane anchorPane = loader.load();
             ventanaPrincipalController principalController = loader.getController();
             principalController.setAplicacion(this);
-
             Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
             primaryStage.show();

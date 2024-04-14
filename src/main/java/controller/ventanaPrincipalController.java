@@ -41,14 +41,14 @@ public class ventanaPrincipalController {
 
     public void abrirViewInicioSesion(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader= new FXMLLoader();
-        loader.setLocation(App.class.getResource("../view/ventanaLogin.fxml"));
+        loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
         ventanaLoginController loginController = loader.getController();
         loginController.setAplicacion(aplicacion);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login Empleado");
+        stage.setTitle("Login");
         loginController.init(stage, this);
         stage.show();
         this.stage.close();

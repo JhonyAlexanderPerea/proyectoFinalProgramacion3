@@ -7,9 +7,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Formatter;
 import model.Publicador;
-import exception.GduqExceptions;
-import exception.GduqExceptions.CsvDePublicadorMalFormado;
-import exception.GduqExceptions.PublicadorDuplicadoException;
+import exception.Exceptions;
+import exception.Exceptions.CsvDePublicadorMalFormado;
+import exception.Exceptions.PublicadorDuplicadoException;
 
 /**
  * Proporciona un adaptador enetre la aplicación y el sistema de
@@ -195,7 +195,7 @@ public class PublicadorCsvDao implements Closeable {
                     idMax = idActual;
                 }
             } else {
-                throw new GduqExceptions().new CsvDePublicadorMalFormado();
+                throw new Exceptions().new CsvDePublicadorMalFormado();
             }
         }
         return idMax;
@@ -221,7 +221,7 @@ public class PublicadorCsvDao implements Closeable {
                     return true;
                 }
             } else {
-                throw new GduqExceptions().new CsvDePublicadorMalFormado();
+                throw new Exceptions().new CsvDePublicadorMalFormado();
             }
         }
         return false;
@@ -264,7 +264,7 @@ public class PublicadorCsvDao implements Closeable {
 
             // Se verifica si ya existe un publicador registrado con el mismo nombre.
             if(existePublicador(publicador.getNombre())) {
-                PublicadorDuplicadoException pde = new GduqExceptions().new PublicadorDuplicadoException();
+                PublicadorDuplicadoException pde = new Exceptions().new PublicadorDuplicadoException();
                 pde.setSistemaDePersistencia(PublicadorCsvDao.SISTEMA_DE_PERSISTENCIA);
                 pde.setNombreDelPublicador(publicador.getNombre());
                 throw pde;

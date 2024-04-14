@@ -54,20 +54,35 @@
                </cursor>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btnIngresar" layoutX="114.0" layoutY="403.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="38.0" prefWidth="151.0" style="-fx-background-color: green; -fx-font-family: 'Work Sans SemiBold'; -fx-font-size: 20; -fx-border-radius: 14;" text="Ingresar">
          <font>
             <Font name="Work Sans SemiBold" size="12.0" />
-         </font></Button>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button fx:id="btnOlvidoContrsenia" layoutX="208.0" layoutY="320.0" mnemonicParsing="false" onAction="#recuperarContrasenia" style="-fx-background-color: transparent; -fx-text-fill: black; -fx-font-family: 'Work Sans SemiBold';" text="¿Olvidó su contraseña?">
          <font>
             <Font name="Work Sans SemiBold" size="13.0" />
-         </font></Button>
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button fx:id="btnCrearCuenta" layoutX="114.0" layoutY="470.0" mnemonicParsing="false" onAction="#crearCuenta" prefHeight="29.0" prefWidth="151.0" style="-fx-font-family: 'Work Sans SemiBold'; -fx-font-size: 13; -fx-background-color: transparent; -fx-text-fill: black;" text="Crear una cuenta">
          <font>
             <Font name="Work Sans SemiBold" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button fx:id="btnAtras" layoutX="13.0" layoutY="503.0" mnemonicParsing="false" onAction="#abrirViewPrincipal" style="-fx-background-color: red;" text="Atras" />
+      <Button fx:id="btnAtras" layoutX="13.0" layoutY="503.0" mnemonicParsing="false" onAction="#abrirViewPrincipal" style="-fx-background-color: red;" text="Atras">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

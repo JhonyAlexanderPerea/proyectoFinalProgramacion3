@@ -23,6 +23,7 @@ public class ventanaLoginController {
 
     private ventanaPrincipalController principioController;
 
+    private ventanaPublicacionesController publicacionesController;
     @FXML
     private Button btnCrearCuenta;
 
@@ -53,8 +54,19 @@ public class ventanaLoginController {
     }
 
     @FXML
-    void iniciarSesion(ActionEvent event) {
-
+    void iniciarSesion(ActionEvent event) throws IOException {
+        FXMLLoader loader= new FXMLLoader();
+        loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
+        AnchorPane anchorPane= (AnchorPane)loader.load();
+        ventanaPublicacionesController publicacionesController= loader.getController();
+        publicacionesController.setAplicacion(app);
+        Scene scene= new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Login Empleado");
+        publicacionesController.init(stage, this);
+        stage.show();
+        this.stage.close();
     }
 
     @FXML
@@ -82,7 +94,7 @@ public class ventanaLoginController {
         loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
         ventanaPrincipalController principalController= loader.getController();
-        principalController.setAplicacion(app);
+        principalController.setApp(app);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);

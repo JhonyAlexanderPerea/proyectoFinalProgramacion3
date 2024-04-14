@@ -14,7 +14,10 @@ public class ventanaPrincipalController {
 
 
     private App aplicacion;
+
     private Stage stage;
+
+    private ventanaLoginController ventanaLoginController;
 
     @FXML
     void cerrarPrincipal(ActionEvent event) {
@@ -41,7 +44,7 @@ public class ventanaPrincipalController {
 
     public void abrirViewInicioSesion(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader= new FXMLLoader();
-        loader.setLocation(App.class.getResource("../view/ventanaLogin.fxml"));
+        loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
         ventanaLoginController loginController = loader.getController();
         loginController.setAplicacion(aplicacion);
@@ -52,5 +55,10 @@ public class ventanaPrincipalController {
         loginController.init(stage, this);
         stage.show();
         this.stage.close();
+    }
+
+    public void init(Stage stage, ventanaLoginController loginController) {
+        this.ventanaLoginController = loginController;
+        this.stage = stage;
     }
 }

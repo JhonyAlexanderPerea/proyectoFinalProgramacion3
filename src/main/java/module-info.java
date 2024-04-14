@@ -15,4 +15,5 @@ module java {
     exports model;
 
     opens controller;
+    opens view;
 }

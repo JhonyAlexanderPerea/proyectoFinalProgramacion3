@@ -30,7 +30,8 @@ public class App extends Application {
             loader.setLocation(getClass().getResource("/view/ventanaPrincipal.fxml"));
             AnchorPane anchorPane = loader.load();
             ventanaPrincipalController principalController = loader.getController();
-            principalController.setAplicacion(this);
+            principalController.setApp(this);
+
             Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
             primaryStage.show();

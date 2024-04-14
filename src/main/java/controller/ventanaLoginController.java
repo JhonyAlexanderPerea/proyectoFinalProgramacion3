@@ -23,6 +23,7 @@ public class ventanaLoginController {
 
     private ventanaPrincipalController principioController;
 
+    private ventanaPublicacionesController publicacionesController;
     @FXML
     private Button btnCrearCuenta;
 
@@ -53,10 +54,35 @@ public class ventanaLoginController {
     }
 
     @FXML
-    void iniciarSesion(ActionEvent event) {
-
+    void iniciarSesion(ActionEvent event) throws IOException {
+        FXMLLoader loader= new FXMLLoader();
+        loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
+        AnchorPane anchorPane= (AnchorPane)loader.load();
+        ventanaPublicacionesController publicacionesController= loader.getController();
+        publicacionesController.setAplicacion(app);
+        Scene scene= new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Login Empleado");
+        publicacionesController.init(stage, this);
+        stage.show();
+        this.stage.close();
     }
 
+    public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader= new FXMLLoader();
+        loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
+        AnchorPane anchorPane= (AnchorPane)loader.load();
+        ventanaPrincipalController principalController= loader.getController();
+        principalController.setApp(app);
+        Scene scene= new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Login Empleado");
+        principalController.init(stage, this);
+        stage.show();
+        this.stage.close();
+    }
     @FXML
     void limpiarCampos(ActionEvent event) {
         txtUsuario.setText("");
@@ -75,21 +101,6 @@ public class ventanaLoginController {
     public void init(Stage stage, ventanaPrincipalController principalController) {
         this.principioController = principalController;
         this.stage = stage;
-    }
-
-    public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader= new FXMLLoader();
-        loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
-        AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaPrincipalController principalController= loader.getController();
-        principalController.setAplicacion(app);
-        Scene scene= new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Login Empleado");
-        principalController.init(stage, this);
-        stage.show();
-        this.stage.close();
     }
 }
 

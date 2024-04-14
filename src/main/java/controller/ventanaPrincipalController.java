@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ventanaPrincipalController {
 
 
-    private App aplicacion;
+    private App app;
 
     private Stage stage;
 
@@ -30,8 +30,8 @@ public class ventanaPrincipalController {
     }
 
 
-    public void setAplicacion(App app) {
-        this.aplicacion = app;
+    public void setApp(App app) {
+        this.app = app;
     }
 
     public void setStage(Stage primaryStage) {
@@ -47,7 +47,7 @@ public class ventanaPrincipalController {
         loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
         ventanaLoginController loginController = loader.getController();
-        loginController.setAplicacion(aplicacion);
+        loginController.setAplicacion(app);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);

@@ -12,7 +12,7 @@ import exception.Exceptions.CsvDePublicadorMalFormado;
 import exception.Exceptions.PublicadorDuplicadoException;
 
 /**
- * Proporciona un adaptador enetre la aplicación y el sistema de
+ * Proporciona un adaptador entre la aplicación y el sistema de
  * persistencia mediante archivos csv.
  *
  * Funciona como una aproximación a la práctica denominada

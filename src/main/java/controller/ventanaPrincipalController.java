@@ -15,13 +15,13 @@ public class ventanaPrincipalController {
 
     private App app;
 
-    private Stage stage;
+    private Stage stage1;
 
     private ventanaLoginController ventanaLoginController;
 
     @FXML
     void cerrarPrincipal(ActionEvent event) {
-        stage.close();
+        stage1.close();
     }
 
     @FXML
@@ -34,12 +34,13 @@ public class ventanaPrincipalController {
         this.app = app;
     }
 
-    public void setStage(Stage primaryStage) {
-        stage = primaryStage;
+    public void setStage1(Stage primaryStage) {
+
+        stage1 = primaryStage;
     }
 
     public void show() {
-        stage.show();
+        stage1.show();
     }
 
     public void abrirViewInicioSesion(ActionEvent actionEvent) throws IOException {
@@ -51,14 +52,18 @@ public class ventanaPrincipalController {
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login");
-        loginController.init(stage, this);
+        stage.setTitle("LOGIN");
+        loginController.initPrincipal(stage, this);
         stage.show();
-        this.stage.close();
+        this.stage1.close();
     }
 
     public void init(Stage stage, ventanaLoginController loginController) {
         this.ventanaLoginController = loginController;
-        this.stage = stage;
+        this.stage1 = stage;
+    }
+
+    public void finalizarEjecucion(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

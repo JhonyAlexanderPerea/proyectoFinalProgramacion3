@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class ventanaLoginController {
 
-
     private App app;
 
     private Stage stage;
@@ -24,6 +23,13 @@ public class ventanaLoginController {
     private ventanaPrincipalController principioController;
 
     private ventanaPublicacionesController publicacionesController;
+
+    private controller.ventanaRegistroController ventanaRegistroController;
+
+    private controller.ventanaRecuperarContraseñaController ventanaRecuperarContraseñaController;
+
+    private boolean showPassword = false;
+
     @FXML
     private Button btnCrearCuenta;
 
@@ -43,7 +49,7 @@ public class ventanaLoginController {
     private Label lblUsuario;
 
     @FXML
-    private PasswordField txtContrasenia;
+    private PasswordField txtContraseña;
 
     @FXML
     private TextField txtUsuario;
@@ -55,51 +61,108 @@ public class ventanaLoginController {
 
     @FXML
     void iniciarSesion(ActionEvent event) throws IOException {
-        FXMLLoader loader= new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
-        AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaPublicacionesController publicacionesController= loader.getController();
-        publicacionesController.setAplicacion(app);
-        Scene scene= new Scene(anchorPane);
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+        ventanaPublicacionesController publicacionesController = loader.getController();
+        publicacionesController.setApp(app);
+        Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login Empleado");
+        stage.setTitle("PUBLICACIONES");
         publicacionesController.init(stage, this);
         stage.show();
         this.stage.close();
     }
-
+    @FXML
     public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader= new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
-        AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaPrincipalController principalController= loader.getController();
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+        ventanaPrincipalController principalController = loader.getController();
         principalController.setApp(app);
-        Scene scene= new Scene(anchorPane);
+        Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login Empleado");
+        stage.setTitle("PRINCIPAL");
         principalController.init(stage, this);
         stage.show();
         this.stage.close();
     }
+
     @FXML
-    void limpiarCampos(ActionEvent event) {
-        txtUsuario.setText("");
-        txtContrasenia.setText("");
+    public void abrirViewRegistro(ActionEvent actionEvent) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(App.class.getResource("/view/ventanaRegistro.fxml"));
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+        ventanaRegistroController registroController = loader.getController();
+        registroController.setApp(app);
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("REGISTRO");
+       registroController.init(stage, this);
+        stage.show();
+        this.stage.close();
     }
 
     @FXML
-    void recuperarContrasenia(ActionEvent event) {
+    void limpiarCampos(ActionEvent event) {
+        txtUsuario.setText("");
+        txtContraseña.setText("");
+    }
 
+    @FXML
+    public void abrirViewRecuperarContraseña(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(App.class.getResource("/view/ventanaRecuperarContraseña.fxml"));
+        AnchorPane anchorPane = (AnchorPane) loader.load();
+        ventanaRecuperarContraseñaController recuperarContraseñaControllerr = loader.getController();
+        recuperarContraseñaControllerr.setApp(app);
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("RECUPERAR CONTRASEÑA");
+        recuperarContraseñaControllerr.init(stage, this);
+        stage.show();
+        this.stage.close();
+    }
+
+    @FXML
+    public void mostrarContraseña(ActionEvent actionEvent) {
+        showPassword = !showPassword;
+        if (showPassword) {
+            txtContraseña.setPromptText(txtContraseña.getText());
+            txtContraseña.setText("");
+        } else {
+            txtContraseña.setText(txtContraseña.getPromptText());
+            txtContraseña.setPromptText("Ingrese contraseña");
+        }
     }
 
     public void setAplicacion(App aplicacion) {
         this.app = aplicacion;
     }
 
-    public void init(Stage stage, ventanaPrincipalController principalController) {
+    public void initPrincipal(Stage stage, ventanaPrincipalController principalController) {
         this.principioController = principalController;
+        this.stage = stage;
+    }
+
+    public void initPublicaciones(Stage stage, ventanaPublicacionesController publicacionesController) {
+        this.publicacionesController = publicacionesController;
+        this.stage = stage;
+    }
+
+
+    public void initRegistro(Stage stage, ventanaRegistroController ventanaRegistroController) {
+        this.ventanaRegistroController = ventanaRegistroController;
+        this.stage = stage;
+    }
+
+
+    public void initRecuperar(Stage stage, ventanaRecuperarContraseñaController ventanaRecuperarContraseñaController) {
+        this.ventanaRecuperarContraseñaController = ventanaRecuperarContraseñaController;
         this.stage = stage;
     }
 }

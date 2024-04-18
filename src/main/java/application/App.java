@@ -33,9 +33,10 @@ public class App extends Application {
             principalController.setApp(this);
             Scene scene = new Scene(anchorPane);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("PRINCIPAL");
             primaryStage.show();
             ventanaPrincipalController controller = loader.getController();
-            controller.setStage(primaryStage);
+            controller.setStage1(primaryStage);
         } catch (IOException e) {
             e.printStackTrace();
         }

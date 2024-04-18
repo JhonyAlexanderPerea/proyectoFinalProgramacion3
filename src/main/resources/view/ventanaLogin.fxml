@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
+<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaLoginController">
    <children>
       <AnchorPane layoutX="287.0" layoutY="11.0" prefHeight="329.0" prefWidth="350.0" style="-fx-background-color: #C4DAFA;">
          <children>
@@ -13,13 +18,18 @@
                <font>
                   <Font name="Malgun Gothic" size="21.0" />
                </font></Label>
-            <Button layoutX="134.0" layoutY="231.0" mnemonicParsing="false" style="-fx-background-color: #84B6F4;" text="Acceder">
+            <Button fx:id="btnIniciarSesion" layoutX="136.0" layoutY="242.0" mnemonicParsing="false" onAction="#iniciarSesion" style="-fx-background-color: #84B6F4;" text="Acceder">
                <font>
                   <Font name="Malgun Gothic" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <TextField layoutX="144.0" layoutY="79.0" promptText="Ingrese Usuario" />
-            <TextField layoutX="144.0" layoutY="146.0" promptText="Ingrese contraseña" />
+            <TextField fx:id="txtUsuario" layoutX="144.0" layoutY="79.0" promptText="Ingrese usuario">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
             <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="14.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/iconoUsuario.png" />
@@ -41,12 +51,65 @@
                </font>
             </Label>
             <Label layoutX="111.0" layoutY="292.0" text="¿Olvidaste tu contraseña?" underline="true" />
+            <Button fx:id="btnOlvidoContraseña" layoutX="113.0" layoutY="288.0" mnemonicParsing="false" onAction="#abrirViewRecuperarContraseña" opacity="0.0" prefHeight="25.0" prefWidth="136.0" text="olvidaste contraseña">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="206.0" layoutY="178.0" text="Limpiar Campos" underline="true" />
+            <Button fx:id="btnLimpiarCampos" layoutX="204.0" layoutY="174.0" mnemonicParsing="false" onAction="#limpiarCampos" opacity="0.0" prefHeight="17.0" prefWidth="86.0" text="limpiar campos">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Malgun Gothic" size="12.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="txtContraseña" layoutX="144.0" layoutY="143.0" promptText="Ingrese contraseña">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </PasswordField>
+            <ImageView fitHeight="14.0" fitWidth="21.0" layoutX="301.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconoVer.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="btnVerContraseña" layoutX="298.0" layoutY="149.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#mostrarContraseña" opacity="0.0" prefHeight="14.0" prefWidth="21.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
-      <Button layoutX="57.0" layoutY="240.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: #C4DAFA;" text="Registrarse">
+      <Button fx:id="btnRegistro" layoutX="40.0" layoutY="256.0" mnemonicParsing="false" onAction="#abrirViewRegistro" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #C4DAFA;" text="Registrarse">
          <font>
             <Font name="Malgun Gothic" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fx:id="imgFondo" fitHeight="200.0" fitWidth="200.0" layoutX="42.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconoUsuarioGrande.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconoAtras.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="btnSalir" layoutX="16.0" layoutY="311.0" mnemonicParsing="false" onAction="#abrirViewPrincipal" opacity="0.0" prefHeight="30.0" prefWidth="30.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

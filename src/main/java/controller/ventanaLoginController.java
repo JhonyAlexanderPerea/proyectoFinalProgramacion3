@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -68,6 +69,7 @@ public class ventanaLoginController {
         publicacionesController.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         stage.setScene(scene);
         stage.setTitle("PUBLICACIONES");
         publicacionesController.init(stage, this);
@@ -83,6 +85,7 @@ public class ventanaLoginController {
         principalController.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         stage.setScene(scene);
         stage.setTitle("PRINCIPAL");
         principalController.init(stage, this);
@@ -99,6 +102,7 @@ public class ventanaLoginController {
         registroController.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         stage.setScene(scene);
         stage.setTitle("REGISTRO");
        registroController.init(stage, this);
@@ -121,6 +125,7 @@ public class ventanaLoginController {
         recuperarContraseñaControllerr.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         stage.setScene(scene);
         stage.setTitle("RECUPERAR CONTRASEÑA");
         recuperarContraseñaControllerr.init(stage, this);

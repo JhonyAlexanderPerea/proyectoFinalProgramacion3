@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import repository.csvdao.PublicadorCsvDao;
@@ -31,6 +32,7 @@ public class ventanaRecuperarContraseñaController {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("LOGIN");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         loginController.initRecuperar(stage, this);
         stage.show();
         this.stage1.close();

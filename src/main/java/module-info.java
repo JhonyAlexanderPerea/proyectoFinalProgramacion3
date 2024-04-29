@@ -12,6 +12,7 @@ module java {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires static lombok;
+    requires java.logging;
 
     exports application;
     exports model;

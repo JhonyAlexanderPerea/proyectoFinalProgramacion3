@@ -1,17 +1,8 @@
+.custom-password-field {
+    -fx-background-color: transparent; /* Establece el fondo transparente */
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 0 0 5 0; /* Grosor del borde (top right bottom left) */
+}
 
-/* Estilo para el botón de ingresar ventana Login*/
-.boton-ingresar {
-    -fx-background-color:  #bbb3b3;
-    -fx-text-fill: #ffffff;
-    -fx-background-radius: 13;
-    -fx-font-family: 'Helvetica Rounded';
-    -fx-font-size: 14;
-}
-.boton-ingresar:pressed{
-    -fx-background-color:  #bbb3b3;
-}
-.boton-ingresar:hover{
-    -fx-background-color:  #bbb3b3;
-}
 
 

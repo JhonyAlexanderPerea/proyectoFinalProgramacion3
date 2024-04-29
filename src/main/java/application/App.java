@@ -5,6 +5,7 @@ import controller.ventanaPrincipalController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -17,8 +18,8 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         System.gc();
-        // primaryStage.setTitle("Concesionario");
         mostrarVentanaPrincipal();
 
     }
@@ -32,6 +33,7 @@ public class App extends Application {
             ventanaPrincipalController principalController = loader.getController();
             principalController.setApp(this);
             Scene scene = new Scene(anchorPane);
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
             primaryStage.setScene(scene);
             primaryStage.setTitle("PRINCIPAL");
             primaryStage.show();

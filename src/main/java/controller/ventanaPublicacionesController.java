@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -95,6 +96,7 @@ public class ventanaPublicacionesController {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("LOGIN");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         loginController.initPublicaciones(stage, this);
         stage.show();
         this.stage1.close();

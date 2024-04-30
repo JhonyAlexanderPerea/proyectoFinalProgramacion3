@@ -42,12 +42,13 @@ public class ClienteHilo implements Runnable {
 
 	private void guardarContenidoArchivo(InputStream inputStream, String nombreArchivo) throws IOException {
 
-		File directorio = new File("src/main/resources/");
+		File directorio = new File("C:\\Users\\JHONY\\Documents\\GitHub\\proyectoFinalProgramacion3\\src\\main\\resources\\");
+
 		if (!directorio.exists()) {
 			directorio.mkdirs();  // Crear directorio y subdirectorios si es necesario
 		}
 
-		File archivoDestino = new File("src/main/resources/" + nombreArchivo);
+		File archivoDestino = new File("C:\\Users\\JHONY\\Documents\\GitHub\\proyectoFinalProgramacion3\\src\\main\\resources\\" + nombreArchivo);
 
 		// Crear el archivo en el directorio destino
 		if (!archivoDestino.exists()) {

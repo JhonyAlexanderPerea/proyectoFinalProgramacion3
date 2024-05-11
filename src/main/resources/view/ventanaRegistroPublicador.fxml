@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="350.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VentanaLoginPublicador">
+   <children>
+      <Button fx:id="btnSalir" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="28.0" style="-fx-background-color: TRANSPARENT;" />
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconoAtras.png" />
+         </image></ImageView>
+   </children>
+</AnchorPane>

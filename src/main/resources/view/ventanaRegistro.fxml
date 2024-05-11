@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="350.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaRegistroController">
    <children>
@@ -20,5 +21,25 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Button layoutX="336.0" layoutY="14.0" mnemonicParsing="false" prefHeight="242.0" prefWidth="300.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="242.0" prefWidth="300.0" />
+      <ImageView fitHeight="190.0" fitWidth="250.0" layoutX="70.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconoPublicador.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="190.0" fitWidth="250.0" layoutX="391.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/iconoCliente.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="217.0" prefHeight="38.0" prefWidth="300.0" text="PUBLICADOR" textAlignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="24.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="336.0" layoutY="220.0" prefHeight="38.0" prefWidth="300.0" text="CLIENTE" textAlignment="CENTER" />
+         <font>
+            <Font name="Malgun Gothic Bold" size="24.0" />
+         </font></Label>
    </children>
 </AnchorPane>

@@ -34,7 +34,7 @@ public class RegistrableUtil {
                 FileHandler controladorArchivoLog =
                        new FileHandler("src/main/java/Logs/proyecto.log");
                 controladorArchivoLog.setFormatter(formateadorMensaje);
-                this.registrarLog = Logger.getLogger("proyectoLog");
+                this.registrarLog = Logger.getLogger("proyecto");
                 this.registrarLog.addHandler(controladorArchivoLog);
             }
 

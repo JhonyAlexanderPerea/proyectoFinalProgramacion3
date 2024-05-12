@@ -7,14 +7,14 @@ public class ArchivosUtil {
 
         String feedDeEntradaArticulos = String.format(
                 "%s/%s/%s",
-                "src/main/resources/content/",
+                "src/main/resources/content/article/",
                 abreviatura,
                 "articulos"
         );
 
         String feedDeEntradaFotos = String.format(
                 "%s/%s/%s",
-                "src/main/resources/content/",
+                "src/main/resources/content/photos/",
                 abreviatura,
                 "fotos"
         );

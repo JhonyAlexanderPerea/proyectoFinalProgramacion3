@@ -21,6 +21,7 @@ public class ventanaPublicacionesController {
     private App app;
     private Stage stage1;
     private Thread hiloServidor;
+    private ServidorArchivos servidorArchivos;
 
     @FXML
     private Button btnArchivos;
@@ -76,17 +77,15 @@ public class ventanaPublicacionesController {
 
     @FXML
     void montarServidor(ActionEvent actionEvent) {
-        hiloServidor = new Thread(() -> {
-            ServidorArchivos servidor = new ServidorArchivos(5000);
-            servidor.iniciarServidor();
-        });
+        servidorArchivos = new ServidorArchivos(5000);
+        hiloServidor = new Thread(servidorArchivos::iniciarServidor);
         hiloServidor.start();
     }
 
     @FXML
     void abrirViewLogin(ActionEvent actionEvent) throws IOException {
-        if (hiloServidor != null && hiloServidor.isAlive()) {
-            hiloServidor.interrupt();
+        if (servidorArchivos != null) {
+            servidorArchivos.cerrarServidor();
         }
 
         Stage stage = new Stage();
@@ -109,3 +108,4 @@ public class ventanaPublicacionesController {
         this.stage1 = stage;
     }
 }
+

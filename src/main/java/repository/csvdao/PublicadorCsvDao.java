@@ -27,7 +27,7 @@ public class PublicadorCsvDao implements Closeable {
 
     public PublicadorCsvDao() {
         super();
-        this.rutaArchivo = "C:/Users/lenovo/Documents/grupo_dia/publicadores.csv";
+        this.rutaArchivo = "src/main/resources/content/shippingManager/publicadores.csv";
         this.formato = "%s,%s,%s%s";
     }
 

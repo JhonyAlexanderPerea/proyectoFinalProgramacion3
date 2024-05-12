@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="350.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaRegistroController">
+<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaRegistroController">
    <children>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/iconoAtras.png" />
          </image>
@@ -16,28 +16,28 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
-      <Button fx:id="btnSalir" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" onAction="#abrirViewLogin" opacity="0.0" prefHeight="30.0" prefWidth="30.0">
+      <Button fx:id="btnSalir" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#abrirViewLogin" opacity="0.0" prefHeight="30.0" prefWidth="30.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="336.0" layoutY="14.0" mnemonicParsing="false" prefHeight="242.0" prefWidth="300.0" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="242.0" prefWidth="300.0" />
-      <ImageView fitHeight="190.0" fitWidth="250.0" layoutX="70.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="347.0" layoutY="117.0" mnemonicParsing="false" prefHeight="218.0" prefWidth="250.0" style="-fx-background-radius: 0; -fx-background-color: #C4DAFA;" />
+      <Button layoutX="52.0" layoutY="117.0" mnemonicParsing="false" prefHeight="218.0" prefWidth="260.0" style="-fx-background-radius: 0; -fx-background-color: #C4DAFA;" />
+      <ImageView fitHeight="184.0" fitWidth="190.0" layoutX="87.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/iconoPublicador.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="190.0" fitWidth="250.0" layoutX="391.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="201.0" fitWidth="190.0" layoutX="377.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/iconoCliente.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="217.0" prefHeight="38.0" prefWidth="300.0" text="PUBLICADOR" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="52.0" layoutY="296.0" prefHeight="38.0" prefWidth="260.0" text="PUBLICADOR" textAlignment="CENTER">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="336.0" layoutY="220.0" prefHeight="38.0" prefWidth="300.0" text="CLIENTE" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="347.0" layoutY="296.0" prefHeight="38.0" prefWidth="250.0" text="CLIENTE" textAlignment="CENTER">
          <font>
             <Font name="Malgun Gothic Bold" size="24.0" />
          </font></Label>

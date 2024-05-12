@@ -1,7 +1,7 @@
 package controller;
 
-import Networking.ServerMain;
-import Networking.clienteArchivos;
+import Networking.ClienteArchivos;
+import Networking.ServidorArchivos;
 import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,16 +16,12 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.ServerSocket;
 
 public class ventanaPublicacionesController {
 
     private App app;
-    private ventanaLoginController ventanaLoginController;
     private Stage stage1;
-
-    private Thread hiloServer;
-    private ServerSocket serverSocket;
+    private Thread hiloServidor;
 
     @FXML
     private Button btnArchivos;
@@ -62,19 +58,18 @@ public class ventanaPublicacionesController {
         }
 
         // Llamar a los métodos para conectar el cliente y el servidor
-
         String direccionIP = "127.0.0.1"; // Dirección IP del servidor
-        int puerto = 10; // Puerto del servidor
+        int puerto = 5000; // Puerto del servidor
 
         // Crear cliente de archivos y establecer la conexión con el servidor
-        clienteArchivos cliente = new clienteArchivos(direccionIP, puerto);
+        ClienteArchivos cliente = new ClienteArchivos(direccionIP, puerto);
         try {
             // Llamar al método para enviar el archivo
             cliente.enviarArchivo(new File(nombreArchivo));
 
             // Notificar al usuario que el archivo se ha enviado
             System.out.println("Archivo enviado con éxito.");
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.err.println("Error al conectar con el servidor.");
             System.err.println("Error al enviar el archivo: " + e.getMessage());
         }
@@ -82,44 +77,29 @@ public class ventanaPublicacionesController {
 
     @FXML
     void montarServidor(ActionEvent actionEvent) {
-        hiloServer = new Thread(() -> {
-            try {
-                serverSocket = new ServerSocket(10); // Puerto del servidor
-                System.out.println("Esperando peticiones...");
-                while (true) {
-                    serverSocket.accept();
-                    System.out.println("cliente conectado");
-                }
-            } catch (IOException e) {
-                System.out.println("Servidor cerrado");
-            }
+        hiloServidor = new Thread(() -> {
+            ServidorArchivos servidor = new ServidorArchivos(5000);
+            servidor.iniciarServidor();
         });
-        hiloServer.start();
+        hiloServidor.start();
     }
 
     @FXML
     void abrirViewLogin(ActionEvent actionEvent) throws IOException {
-        if (hiloServer != null && hiloServer.isAlive()) {
-            try {
-                serverSocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if (hiloServidor != null && hiloServidor.isAlive()) {
+            hiloServidor.interrupt();
         }
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane = loader.load();
         ventanaLoginController loginController = loader.getController();
         loginController.setAplicacion(app);
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("LOGIN");
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         loginController.initPublicaciones(stage, this);
+        stage.setScene(new Scene(anchorPane));
+        stage.setTitle("LOGIN");
         stage.show();
-        this.stage1.close();
+        stage1.close();
     }
 
     public void setApp(App app) {
@@ -127,7 +107,6 @@ public class ventanaPublicacionesController {
     }
 
     public void init(Stage stage, ventanaLoginController ventanaLoginController) {
-        this.ventanaLoginController = ventanaLoginController;
         this.stage1 = stage;
     }
 }

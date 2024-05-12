@@ -7,7 +7,7 @@ import java.net.Socket;
 public class ServidorArchivos {
 
     private int puerto;
-    private String rutaDirectorio = "archivos/";
+    private String rutaDirectorio = "src/main/archivos/";
 
     public ServidorArchivos(int puerto) {
         this.puerto = puerto;

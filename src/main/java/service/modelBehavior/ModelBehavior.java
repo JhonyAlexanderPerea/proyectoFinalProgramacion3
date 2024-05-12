@@ -1,6 +1,6 @@
-package Service.modelbehavior;
+package service.modelBehavior;
 
-import Service.businessObject.BusinessObject;
+import service.businessObject.BusinessObject;
 public class ModelBehavior {
 
     BusinessObject bo;

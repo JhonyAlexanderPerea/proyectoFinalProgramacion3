@@ -1,4 +1,4 @@
-package Service.businessObject;
+package service.businessObject;
 
 import util.RegistrableUtil;
 public class BusinessObject extends RegistrableUtil {

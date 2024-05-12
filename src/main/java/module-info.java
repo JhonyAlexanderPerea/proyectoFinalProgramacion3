@@ -20,5 +20,5 @@ module java {
 
     opens controller;
     opens view;
-    opens Networking;
+    opens networking;
 }

@@ -1,7 +1,7 @@
-package Service.businessObject;
+package service.businessObject;
 
 import model.Publicador;
-import Service.modelbehavior.GestorPublicadoresModelBehavior;
+import service.modelBehavior.GestorPublicadoresModelBehavior;
 
 public class CrudBusinessObject extends BusinessObject {
 

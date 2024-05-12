@@ -1,7 +1,7 @@
 package controller;
 
-import Networking.ClienteArchivos;
-import Networking.ServidorArchivos;
+import networking.ClienteArchivos;
+import networking.ServidorArchivos;
 import application.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;

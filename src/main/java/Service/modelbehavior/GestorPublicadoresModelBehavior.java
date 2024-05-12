@@ -1,5 +1,4 @@
 package Service.modelbehavior;
-
 import java.io.IOException;
 
 import model.Publicador;
@@ -11,7 +10,7 @@ import Service.businessObject.BusinessObject;
 import util.ArchivosUtil;
 import util.StringUtil;
 
-/*
+
 public class GestorPublicadoresModelBehavior extends ModelBehavior {
 
     public GestorPublicadoresModelBehavior() {
@@ -26,11 +25,10 @@ public class GestorPublicadoresModelBehavior extends ModelBehavior {
         long idPublicador = 0;
 
         try (PublicadorCsvDao publiCDao = new PublicadorCsvDao()) {
-
             String abr = StringUtil.obtenerAbreviatura(publicador.getNombre());
             publicador.setAbreviatura(abr);
 
-            if(ArchivosUtil.crearCarpetaDePublicador(abr) == false) {
+            if (ArchivosUtil.crearCarpetaDePublicador(abr) == false) {
                 logAdvertencia("No se pudo crear correctamente las carpetas asociadas al publicador");
             }
 
@@ -46,6 +44,4 @@ public class GestorPublicadoresModelBehavior extends ModelBehavior {
 
         return idPublicador;
     }
-
 }
-*/

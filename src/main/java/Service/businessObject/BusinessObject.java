@@ -1,4 +1,9 @@
 package Service.businessObject;
 
-public class BusinessObject {
+import util.RegistrableUtil;
+public class BusinessObject extends RegistrableUtil {
+
+    public BusinessObject() {
+        super();
+    }
 }

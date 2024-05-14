@@ -22,6 +22,12 @@ public class ventanaRegistroController {
     private Button btnSalir;
 
     @FXML
+    private Button btnRegistroCliente;
+
+    @FXML
+    private Button btnRegistroPublicador;
+
+    @FXML
     void abrirViewLogin(ActionEvent event)throws IOException {
         FXMLLoader loader= new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
@@ -36,6 +42,16 @@ public class ventanaRegistroController {
         loginController.initRegistro(stage, this);
         stage.show();
         this.stage.close();
+    }
+
+    @FXML
+    void abrirRegistroCliente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void abrirRegistroPublicador(ActionEvent event) {
+
     }
 
     public void init(Stage stage, ventanaLoginController ventanaLoginController) {

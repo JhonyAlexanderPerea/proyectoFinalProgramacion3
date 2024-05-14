@@ -23,17 +23,29 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="124.0" layoutY="98.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="142.0" style="-fx-background-radius: 0; -fx-background-color: #C4DAFA;" />
-      <Button layoutX="381.0" layoutY="98.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="142.0" style="-fx-background-radius: 0; -fx-background-color: #C4DAFA;" />
+      <Button fx:id="btnRegistroPublicador" layoutX="124.0" layoutY="98.0" mnemonicParsing="false" onAction="#abrirRegistroPublicador" prefHeight="116.0" prefWidth="142.0" style="-fx-background-radius: 0; -fx-background-color: #C4DAFA;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnRegistroCliente" layoutX="381.0" layoutY="98.0" mnemonicParsing="false" onAction="#abrirRegistroCliente" prefHeight="116.0" prefWidth="142.0" style="-fx-background-radius: 0; -fx-background-color: #C4DAFA;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="145.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/iconoPublicador.gif" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="402.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/iconoUsuario.gif" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
       <Label alignment="CENTER" layoutX="124.0" layoutY="214.0" prefHeight="48.0" prefWidth="142.0" text="PUBLICADOR" textAlignment="CENTER">
          <font>

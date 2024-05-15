@@ -17,7 +17,7 @@ public class RegistrableUtil {
     protected Map<String, LinkedList<String>> mensajes;
     protected boolean logActivo;
     protected String estadoProcesamiento;
-   protected Logger registrarLog;
+    protected Logger registrarLog;
 
    public RegistrableUtil() {
         try {

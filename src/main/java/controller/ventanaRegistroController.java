@@ -31,7 +31,7 @@ public class ventanaRegistroController {
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login");
+        stage.setTitle("LOGIN");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         loginController.initRegistro(stage, this);
         stage.show();

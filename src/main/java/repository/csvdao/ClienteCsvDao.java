@@ -70,7 +70,7 @@ public class ClienteCsvDao implements Closeable {
         while ((linea = lectorBufereado.readLine()) != null) {
             String[] datos = linea.split(ClienteCsvDao.CSV_SEPARADOR);
             if (datos.length >= 1) {
-                idActual = Long.parseLong(datos[0]); // Se espera que el Id esté en la posición 0.
+                idActual = Long.parseLong(datos[0]);
                 if (idActual > idMax) {
                     idMax = idActual;
                 }

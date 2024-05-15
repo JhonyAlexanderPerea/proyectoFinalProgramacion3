@@ -1,6 +1,6 @@
 package service.businessObject;
 
-import Service.modelbehavior.GestorServiciosDeArchivos;
+import service.modelBehavior.GestorServiciosDeArchivos;
 
 public class ProcesosBusinessObject {
     public void enviarArchivo(String ruta) {

@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.util.Formatter;
 import model.Cliente;
 import exception.Exceptions;
-import exception.Exceptions.CsvDePublicadorMalFormado;
-import exception.Exceptions.PublicadorDuplicadoException;
+import exception.Exceptions.CsvDeClienteMalFormado;
+import exception.Exceptions.ClienteDuplicadoException;
 
 public class ClienteCsvDao implements Closeable {
 
@@ -63,7 +63,7 @@ public class ClienteCsvDao implements Closeable {
         cerrarFlujoDeDatos(ClienteCsvDao.FLUJO_DATOS_LECTURA_ESCRITURA);
     }
 
-    private long consultarIdMaximo() throws IOException, CsvDePublicadorMalFormado {
+    private long consultarIdMaximo() throws IOException, CsvDeClienteMalFormado {
         long idActual;
         long idMax = 0;
         String linea;
@@ -75,13 +75,13 @@ public class ClienteCsvDao implements Closeable {
                     idMax = idActual;
                 }
             } else {
-                throw new Exceptions().new CsvDePublicadorMalFormado();
+                throw new Exceptions().new CsvDeClienteMalFormado();
             }
         }
         return idMax;
     }
 
-    public boolean existeCliente(String nombre) throws IOException, CsvDePublicadorMalFormado {
+    public boolean existeCliente(String nombre) throws IOException, CsvDeClienteMalFormado {
         String linea;
         String nombreRegistroActual;
         while ((linea = lectorBufereado.readLine()) != null) {
@@ -92,35 +92,35 @@ public class ClienteCsvDao implements Closeable {
                     return true;
                 }
             } else {
-                throw new Exceptions().new CsvDePublicadorMalFormado();
+                throw new Exceptions().new CsvDeClienteMalFormado();
             }
         }
         return false;
     }
 
-    private long generarId() throws CsvDePublicadorMalFormado, IOException {
+    private long generarId() throws CsvDeClienteMalFormado, IOException {
         long id = consultarIdMaximo();
         return ++id;
     }
 
-    public long guardarPublicador(Cliente cliente)
-            throws PublicadorDuplicadoException, IOException, CsvDePublicadorMalFormado {
+    public long guardarCliente(Cliente cliente)
+            throws ClienteDuplicadoException, IOException, CsvDeClienteMalFormado {
 
         try {
             abrirFlujoDeDatos(ClienteCsvDao.FLUJO_DATOS_LECTURA_ESCRITURA);
 
-            if (existePublicador(publicador.getNombre())) {
-                PublicadorDuplicadoException pde = new Exceptions().new PublicadorDuplicadoException();
+            if (existeCliente(cliente.getNombre())) {
+                ClienteDuplicadoException pde = new Exceptions().new ClienteDuplicadoException();
                 pde.setSistemaDePersistencia(ClienteCsvDao.SISTEMA_DE_PERSISTENCIA);
-                pde.setNombreDelPublicador(publicador.getNombre());
+                pde.setNombreDelCliente(cliente.getNombre());
                 throw pde;
             }
 
             long idPublicador = generarId();
 
             this.formateador.format(
-                    this.formato, idPublicador, publicador.getNombre(),
-                    publicador.getRutaCarpetaArticulos(), publicador.getRutaCarpetaFotos()
+                    this.formato, idPublicador, cliente.getNombre(),
+                    cliente.getRutaArticulos(), cliente.getRutaFotos()
             );
 
             return idPublicador;

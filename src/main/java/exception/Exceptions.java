@@ -1,12 +1,9 @@
 package exception;
 
+import model.Cliente;
+
 public class   Exceptions extends Exception {
 
-    // Miembros tipo variable.
-
-    /**
-     * Atributo utilizado para serializar el objeto.
-     */
     private static final long serialVersionUID = 1L;
 
     public Exceptions() {
@@ -78,5 +75,54 @@ public class   Exceptions extends Exception {
         }
     }
 
+    public class ClienteDuplicadoException extends Exceptions {
 
+        private static final long serialVersionUID = 1L;
+        private String sistemaDePersistencia; 	// BD o CSV.
+        private String nombreDelCliente;		// Nombre del cliente que se intento guardar.
+
+        public ClienteDuplicadoException() {
+            super("..."); // TODO Gestionar un proveedor de mensajes.
+        }
+
+        public ClienteDuplicadoException(
+                String sistemaDePersistencia, String nombreDelCliente) {
+            super("dc");
+            this.sistemaDePersistencia = sistemaDePersistencia;
+            this.nombreDelCliente = nombreDelCliente;
+        }
+
+        public String getNombreDelCliente() {
+            return nombreDelCliente;
+        }
+
+        public void setNombreDelCliente(String nombreDelCliente) {
+            this.nombreDelCliente = nombreDelCliente;
+        }
+
+        @Override
+        public String toString() {
+            // TODO Gestionar un proveedor de mensajes.
+            return "ClienteDuplicadoException [sistemaDePersistencia=" + sistemaDePersistencia
+                    + ", nombreDelCliente=" + nombreDelCliente + "]";
+        }
+
+
+        public String getSistemaDePersistencia() {
+            return sistemaDePersistencia;
+        }
+
+        public void setSistemaDePersistencia(String sistemaDePersistencia) {
+            this.sistemaDePersistencia = sistemaDePersistencia;
+        }
+    }
+
+    public class CsvDeClienteMalFormado extends Exceptions {
+
+        private static final long serialVersionUID = 1L;
+
+        public CsvDeClienteMalFormado() {
+
+        }
+    }
 }

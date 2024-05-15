@@ -1,11 +1,10 @@
-package Service.modelbehavior;
+package service.modelBehavior;
 /*
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
-import Networking.ClienteArchivos;
-import Networking.ServidorArchivos;
+import networking.ClienteArchivos;
+import networking.ServidorArchivos;
 
 public class GestorServiciosDeArchivos {
 
@@ -45,3 +44,6 @@ public class GestorServiciosDeArchivos {
     }
 }
 */
+
+
+

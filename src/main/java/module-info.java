@@ -11,6 +11,7 @@ module java {
     requires com.almasb.fxgl.all;
     requires static lombok;
     requires java.logging;
+    requires java.desktop;
 
     exports application;
     exports model;

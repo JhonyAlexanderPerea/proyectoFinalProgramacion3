@@ -1,4 +1,4 @@
-package service.businessObject;
+/*package service.businessObject;
 
 import service.modelBehavior.GestorServiciosDeArchivos;
 
@@ -12,5 +12,5 @@ public class ProcesosBusinessObject {
         GestorServiciosDeArchivos archivos = new GestorServiciosDeArchivos();
         archivos.iniciarServicioRecepcion(5000);
     }
-}
+}*/
 

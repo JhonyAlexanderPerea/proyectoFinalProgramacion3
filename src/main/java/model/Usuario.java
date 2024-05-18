@@ -8,17 +8,22 @@ public class Usuario extends Persona{
     private long idPublicador;
     private long idUsuario;
     private String loginEmail;
+
+
+    private String usuario;
+    private String contraseña;
     private Rol rol;
     private String tipoAliado;
     public final String TIPO_ALIADO_CLIENTE = "CLIENTE";
     public final String TIPO_ALIADO_PUBLICADOR = "PUBLICADOR";
 
-    public Usuario(long id, String documento, String nombreCompleto, String tipoDocumento, ArrayList<String> listaEmails,
+    public Usuario(long id, String documento, String nombreCompleto, String tipoDocumento,ArrayList<String> listaEmails,
                    String[] listaTelefonos, long idCliente, long idPublicador, long idUsuario, String loginEmail, Rol rol) {
         super(id, documento, nombreCompleto, tipoDocumento, listaEmails, listaTelefonos);
         this.idCliente = idCliente;
         this.idPublicador = idPublicador;
         this.idUsuario = idUsuario;
+
         this.loginEmail = loginEmail;
         this.rol = rol;
     }
@@ -34,6 +39,13 @@ public class Usuario extends Persona{
         this.loginEmail = loginEmail;
         this.rol = rol;
     }
+
+    public Usuario(String usuario, String contraseña) {
+        super();
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+    }
+
 
     public long getIdCliente() {
         return idCliente;
@@ -82,4 +94,8 @@ public class Usuario extends Persona{
     public void setTipoAliado(String tipoAliado) {
         this.tipoAliado = tipoAliado;
     }
+
+    public String getContraseña() {return contraseña;}
+
+    public void setContraseña(String contraseña) {this.contraseña = contraseña;}
 }

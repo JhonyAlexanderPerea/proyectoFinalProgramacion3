@@ -56,7 +56,7 @@ public class ventanaRegistroController {
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login");
+        stage.setTitle("LOGIN CLIENTE");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         registroClienteController.initRegistroCliente(stage, this);
         stage.show();
@@ -73,7 +73,7 @@ public class ventanaRegistroController {
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Login");
+        stage.setTitle("LOGIN PUBLICADOR");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         registroPublicadorController.initRegistroPublicador(stage, this);
         stage.show();

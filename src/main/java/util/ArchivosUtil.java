@@ -31,4 +31,33 @@ public class ArchivosUtil {
     }
 
 
+    public static boolean crearCarpetaDeCliente(String abre) {
+
+        String feedDeRecibirArticulos = String.format(
+                "%s/%s/%s",
+                "src/main/resources/content/carpetasClientes/articulos/",
+                abre,
+                "articulos"
+        );
+
+        String feedDeRecibirFotos = String.format(
+                "%s/%s/%s",
+                "src/main/resources/content/carpetasClientes/fotos/",
+                abre,
+                "fotos"
+        );
+
+        File creadorCarpetaArticulosCliente = new File(feedDeRecibirArticulos);
+        File creadorCarpetaFotosCliente = new File(feedDeRecibirFotos);
+
+        // Se crean las dos carpetas.
+        if(creadorCarpetaArticulosCliente.mkdirs() && creadorCarpetaFotosCliente.mkdirs()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
 }

@@ -40,12 +40,11 @@ public class RegistrableUtil {
 
             // Se inicializa el estado de la aplicación como exitoso.
             this.estadoProcesamiento = RegistrableUtil.ESTADO_PROCESAMIENTO_EXITO;
-        } catch(SecurityException excep) {
-            // TODO Pendiente hacer el código para saber que se hace en este caso.
-        } catch (IOException excep) {
-            // TODO Pendiente hacer el código para saber que se hace en este caso.
+        } catch(SecurityException | IOException excep) {
+            excep.printStackTrace();
+            System.out.println("Error: " + excep.getMessage());
         }
-    }
+   }
 
 
     public void agregarMensaje(String tipoMensaje, String mensaje) {

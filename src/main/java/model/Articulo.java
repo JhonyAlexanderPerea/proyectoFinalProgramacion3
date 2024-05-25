@@ -8,6 +8,13 @@ public class Articulo extends Contenido{
         super(idContenido, titulo, fechaPublicacion);
     }
 
+    /**
+     *
+     * @param idContenido
+     * @param titulo
+     * @param fechaPublicacion
+     * @param cuerpoArticulo
+     */
     public Articulo(long idContenido, String titulo, String fechaPublicacion, String cuerpoArticulo) {
         super(idContenido, titulo, fechaPublicacion);
         this.cuerpoArticulo = cuerpoArticulo;

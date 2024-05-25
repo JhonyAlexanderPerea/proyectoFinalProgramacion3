@@ -12,7 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Seguridad;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class ventanaLoginController {
@@ -30,6 +32,8 @@ public class ventanaLoginController {
     private controller.ventanaRecuperarContraseñaController ventanaRecuperarContraseñaController;
 
     private boolean showPassword = false;
+
+    private Seguridad seguridad = new Seguridad();
 
     @FXML
     private Button btnCrearCuenta;
@@ -62,19 +66,25 @@ public class ventanaLoginController {
 
     @FXML
     void iniciarSesion(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
-        AnchorPane anchorPane = (AnchorPane) loader.load();
-        ventanaPublicacionesController publicacionesController = loader.getController();
-        publicacionesController.setApp(app);
-        Scene scene = new Scene(anchorPane);
-        Stage stage = new Stage();
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
-        stage.setScene(scene);
-        stage.setTitle("PUBLICACIONES");
-        publicacionesController.init(stage, this);
-        stage.show();
-        this.stage.close();
+        if (seguridad.validarUsuario(txtUsuario.getText(),txtContraseña.getText())) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
+            AnchorPane anchorPane = (AnchorPane) loader.load();
+            ventanaPublicacionesController publicacionesController = loader.getController();
+            publicacionesController.setApp(app);
+            Scene scene = new Scene(anchorPane);
+            Stage stage = new Stage();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
+            stage.setScene(scene);
+            stage.setTitle("PUBLICACIONES");
+            publicacionesController.init(stage, this);
+            stage.show();
+            this.stage.close();
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Usuario no encontrado");
+        }
+
     }
     @FXML
     public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {

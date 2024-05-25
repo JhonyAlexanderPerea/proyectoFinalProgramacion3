@@ -32,6 +32,8 @@ public class Persona {
         this.documento = documento;
         this.nombreCompleto = nombreCompleto;
     }
+    public Persona (){
+    }
 
     public long getId() {
         return id;

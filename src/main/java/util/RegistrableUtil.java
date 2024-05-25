@@ -17,7 +17,7 @@ public class RegistrableUtil {
     protected Map<String, LinkedList<String>> mensajes;
     protected boolean logActivo;
     protected String estadoProcesamiento;
-   protected Logger registrarLog;
+    protected Logger registrarLog;
 
    public RegistrableUtil() {
         try {
@@ -34,18 +34,17 @@ public class RegistrableUtil {
                 FileHandler controladorArchivoLog =
                        new FileHandler("src/main/java/Logs/proyecto.log");
                 controladorArchivoLog.setFormatter(formateadorMensaje);
-                this.registrarLog = Logger.getLogger("proyectoLog");
+                this.registrarLog = Logger.getLogger("proyecto");
                 this.registrarLog.addHandler(controladorArchivoLog);
             }
 
             // Se inicializa el estado de la aplicación como exitoso.
             this.estadoProcesamiento = RegistrableUtil.ESTADO_PROCESAMIENTO_EXITO;
-        } catch(SecurityException excep) {
-            // TODO Pendiente hacer el código para saber que se hace en este caso.
-        } catch (IOException excep) {
-            // TODO Pendiente hacer el código para saber que se hace en este caso.
+        } catch(SecurityException | IOException excep) {
+            excep.printStackTrace();
+            System.out.println("Error: " + excep.getMessage());
         }
-    }
+   }
 
 
     public void agregarMensaje(String tipoMensaje, String mensaje) {

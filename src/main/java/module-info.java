@@ -13,6 +13,7 @@ module java {
     requires java.logging;
     requires java.desktop;
     requires com.opencsv;
+    requires jakarta.mail;
 
     exports application;
     exports model;

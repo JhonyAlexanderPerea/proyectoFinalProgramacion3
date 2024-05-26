@@ -12,6 +12,7 @@ module java {
     requires static lombok;
     requires java.logging;
     requires java.desktop;
+    requires com.opencsv;
 
     exports application;
     exports model;

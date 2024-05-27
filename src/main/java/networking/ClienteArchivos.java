@@ -7,9 +7,9 @@ public class ClienteArchivos {
 
     private static final String SERVER_ADDRESS = "localhost";
     private static final int SERVER_PORT = 12345;
-    private static final String OUTPUT_DIRECTORY = "src/main/resources/carpetasClientes/articulos/"; // Cambiar a la ruta adecuada
+    private static final String OUTPUT_DIRECTORY = "src/main/resources/carpetasClientes/articulos/";
 
-    public static void main(String[] args) {
+    public static void conexionServidor() {
         try {
             Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
             System.out.println("Conectado al servidor");

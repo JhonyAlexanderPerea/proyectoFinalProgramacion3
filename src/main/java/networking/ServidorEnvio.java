@@ -11,13 +11,10 @@ public class ServidorEnvio {
 
     private static final int PORT = 12345;
 
-    public static void main(String[] args) {
-        String rutaCSV = "src/main/resources/content/articles/articles_csv/datos_noticias.csv"; // Ruta del archivo CSV con los datos de los artículos
-        procesarEnvioContenido(rutaCSV);
-    }
 
-    public static void procesarEnvioContenido(String rutaCSV) {
-        try (BufferedReader br = new BufferedReader(new FileReader(rutaCSV))) {
+
+    public static void procesarEnvioContenido() {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/content/articles/articles_csv/datos_noticias.csv"))) {
             String linea;
             br.readLine(); // Saltar la línea de encabezado
             while ((linea = br.readLine()) != null) {

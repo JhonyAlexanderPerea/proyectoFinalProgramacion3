@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentanaRecuperarContraseñaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentanaRecuperarContraseñaController">
    <children>
       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,5 +22,42 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label layoutX="198.0" layoutY="29.0" text="Recuperacion Contraseña">
+         <font>
+            <Font name="Malgun Gothic" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnEnviarCodigo" layoutX="250.0" layoutY="233.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: Black; -fx-background-radius: 0; -fx-border-color: white;" text="Enviar Codigo" textFill="WHITE">
+         <font>
+            <Font name="Malgun Gothic" size="17.0" />
+         </font>
+      </Button>
+      <GridPane layoutX="36.0" layoutY="114.0" prefHeight="74.0" prefWidth="574.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="188.4" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="386.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="34.0" prefWidth="197.0" text="Correo recuperacion:">
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Malgun Gothic" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCorreoRecuperacion" prefHeight="33.0" promptText="Ingrese correo donde se enviara el codigo de recuperacion" style="-fx-background-color: #C4DAFA; -fx-background-radius: 0; -fx-border-width: 0 0 2 0; -fx-border-color: BLACK;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Malgun Gothic" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

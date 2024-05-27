@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #84B6F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaPublicacionesController">
+<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #84B6F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentanaPublicacionesController">
    <children>
       <Button fx:id="btnSubirArchivo" layoutX="203.0" layoutY="270.0" mnemonicParsing="false" onAction="#subirArchivo" style="-fx-background-color: #4d82bc;" text="Subir archivo">
          <font>

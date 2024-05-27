@@ -12,12 +12,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ventanaLoginPublicadorController {
+public class VentanaRegistroClienteController {
 
     @FXML
     private Button btnSalir;
     private App app;
-    private controller.ventanaRegistroController ventanaRegistroController;
+    private VentanaRegistroController ventanaRegistroController;
     private Stage stage;
 
 
@@ -26,14 +26,14 @@ public class ventanaLoginPublicadorController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaRegistro.fxml"));
         AnchorPane anchorPane = (AnchorPane) loader.load();
-        ventanaRegistroController registroController = loader.getController();
+        VentanaRegistroController registroController = loader.getController();
         registroController.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
         stage.setScene(scene);
         stage.setTitle("REGISTRO");
-        registroController.initRegistroPublicador(stage, this);
+        registroController.initRegistroCliente(stage, this);
         stage.show();
         this.stage.close();
     }
@@ -42,8 +42,12 @@ public class ventanaLoginPublicadorController {
         this.app = app;
     }
 
-    public void initRegistroPublicador(Stage stage, ventanaRegistroController ventanaRegistroController) {
+    public void initRegistroCliente(Stage stage, VentanaRegistroController ventanaRegistroController) {
         this.ventanaRegistroController = ventanaRegistroController;
         this.stage = stage;
     }
+
+
 }
+
+

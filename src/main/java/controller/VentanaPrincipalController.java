@@ -11,14 +11,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ventanaPrincipalController {
+public class VentanaPrincipalController {
 
 
     private App app;
 
     private Stage stage1;
 
-    private ventanaLoginController ventanaLoginController;
+    private VentanaLoginController ventanaLoginController;
 
     @FXML
     void cerrarPrincipal(ActionEvent event) {
@@ -48,7 +48,7 @@ public class ventanaPrincipalController {
         FXMLLoader loader= new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaLoginController loginController = loader.getController();
+        VentanaLoginController loginController = loader.getController();
         loginController.setAplicacion(app);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
@@ -60,7 +60,7 @@ public class ventanaPrincipalController {
         this.stage1.close();
     }
 
-    public void init(Stage stage, ventanaLoginController loginController) {
+    public void init(Stage stage, VentanaLoginController loginController) {
         this.ventanaLoginController = loginController;
         this.stage1 = stage;
     }

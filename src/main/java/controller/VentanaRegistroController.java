@@ -12,12 +12,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ventanaRegistroController {
+public class VentanaRegistroController {
 
     private App app;
-    private ventanaLoginController ventanaLoginController;
+    private VentanaLoginController ventanaLoginController;
     private Stage stage;
-    private controller.ventanaregistroClienteController ventanaregistroClienteController;
+    private VentanaRegistroClienteController ventanaregistroClienteController;
     @FXML
     private Button btnSalir;
 
@@ -26,7 +26,7 @@ public class ventanaRegistroController {
 
     @FXML
     private Button btnRegistroPublicador;
-    private controller.ventanaLoginPublicadorController ventanaLoginPublicadorController;
+    private VentanaLoginPublicadorController ventanaLoginPublicadorController;
 
 
     @FXML
@@ -34,7 +34,7 @@ public class ventanaRegistroController {
         FXMLLoader loader= new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaLoginController loginController = loader.getController();
+        VentanaLoginController loginController = loader.getController();
         loginController.setAplicacion(app);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
@@ -51,7 +51,7 @@ public class ventanaRegistroController {
         FXMLLoader loader= new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaRegistroCliente.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaregistroClienteController registroClienteController = loader.getController();
+        VentanaRegistroClienteController registroClienteController = loader.getController();
         registroClienteController.setAplicacion(app);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
@@ -68,7 +68,7 @@ public class ventanaRegistroController {
         FXMLLoader loader= new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaRegistroPublicador.fxml"));
         AnchorPane anchorPane= (AnchorPane)loader.load();
-        ventanaLoginPublicadorController registroPublicadorController = loader.getController();
+        VentanaLoginPublicadorController registroPublicadorController = loader.getController();
         registroPublicadorController.setAplicacion(app);
         Scene scene= new Scene(anchorPane);
         Stage stage = new Stage();
@@ -80,12 +80,12 @@ public class ventanaRegistroController {
         this.stage.close();
     }
 
-    public void init(Stage stage, ventanaLoginController ventanaLoginController) {
+    public void init(Stage stage, VentanaLoginController ventanaLoginController) {
         this.ventanaLoginController = ventanaLoginController;
         this.stage = stage;
     }
 
-    public void initRegistroCliente(Stage stage, ventanaregistroClienteController ventanaregistroClienteController) {
+    public void initRegistroCliente(Stage stage, VentanaRegistroClienteController ventanaregistroClienteController) {
         this.ventanaregistroClienteController = ventanaregistroClienteController;
         this.stage = stage;
     }
@@ -95,7 +95,7 @@ public class ventanaRegistroController {
     }
 
 
-    public void initRegistroPublicador(Stage stage, ventanaLoginPublicadorController ventanaLoginPublicadorController) {
+    public void initRegistroPublicador(Stage stage, VentanaLoginPublicadorController ventanaLoginPublicadorController) {
         this.ventanaLoginPublicadorController = ventanaLoginPublicadorController;
         this.stage = stage;
     }

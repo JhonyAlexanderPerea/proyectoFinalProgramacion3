@@ -9,24 +9,23 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import repository.csvdao.PublicadorCsvDao;
 
 import java.io.IOException;
 
-public class ventanaRecuperarContraseñaController {
+public class VentanaRecuperarContraseñaController {
 
     @FXML
     private Button btnSalir;
     private Stage stage1;
     private App app;
-    private controller.ventanaLoginController ventanaLoginController;
+    private VentanaLoginController ventanaLoginController;
 
     @FXML
     void abrirViewLogin(ActionEvent event)throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane = loader.load();
-        ventanaLoginController loginController = loader.getController();
+        VentanaLoginController loginController = loader.getController();
         loginController.setAplicacion(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
@@ -38,7 +37,7 @@ public class ventanaRecuperarContraseñaController {
         this.stage1.close();
     }
 
-    public void init(Stage stage, ventanaLoginController ventanaLoginController) {
+    public void init(Stage stage, VentanaLoginController ventanaLoginController) {
         this.ventanaLoginController = ventanaLoginController;
         this.stage1 = stage;
     }

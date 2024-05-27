@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-public class ventanaPublicacionesController {
+public class VentanaPublicacionesController {
 
     private App app;
     private Stage stage1;
@@ -91,7 +91,7 @@ public class ventanaPublicacionesController {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ventanaLogin.fxml"));
         AnchorPane anchorPane = loader.load();
-        ventanaLoginController loginController = loader.getController();
+        VentanaLoginController loginController = loader.getController();
         loginController.setAplicacion(app);
         loginController.initPublicaciones(stage, this);
         stage.setScene(new Scene(anchorPane));
@@ -104,7 +104,7 @@ public class ventanaPublicacionesController {
         this.app = app;
     }
 
-    public void init(Stage stage, ventanaLoginController ventanaLoginController) {
+    public void init(Stage stage, VentanaLoginController ventanaLoginController) {
         this.stage1 = stage;
     }
 }

@@ -14,22 +14,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Seguridad;
 
-import javax.swing.*;
 import java.io.IOException;
 
-public class ventanaLoginController {
+public class VentanaLoginController {
 
     private App app;
 
     private Stage stage;
 
-    private ventanaPrincipalController principioController;
+    private VentanaPrincipalController principioController;
 
-    private ventanaPublicacionesController publicacionesController;
+    private VentanaPublicacionesController publicacionesController;
 
-    private controller.ventanaRegistroController ventanaRegistroController;
+    private VentanaRegistroController ventanaRegistroController;
 
-    private controller.ventanaRecuperarContraseñaController ventanaRecuperarContraseñaController;
+    private VentanaRecuperarContraseñaController ventanaRecuperarContraseñaController;
 
     private boolean showPassword = false;
 
@@ -69,7 +68,7 @@ public class ventanaLoginController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
             AnchorPane anchorPane = (AnchorPane) loader.load();
-            ventanaPublicacionesController publicacionesController = loader.getController();
+            VentanaPublicacionesController publicacionesController = loader.getController();
             publicacionesController.setApp(app);
             Scene scene = new Scene(anchorPane);
             Stage stage = new Stage();
@@ -88,7 +87,7 @@ public class ventanaLoginController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaPrincipal.fxml"));
         AnchorPane anchorPane = (AnchorPane) loader.load();
-        ventanaPrincipalController principalController = loader.getController();
+        VentanaPrincipalController principalController = loader.getController();
         principalController.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
@@ -105,7 +104,7 @@ public class ventanaLoginController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaRegistro.fxml"));
         AnchorPane anchorPane = (AnchorPane) loader.load();
-        ventanaRegistroController registroController = loader.getController();
+        VentanaRegistroController registroController = loader.getController();
         registroController.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
@@ -128,7 +127,7 @@ public class ventanaLoginController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/ventanaRecuperarContraseña.fxml"));
         AnchorPane anchorPane = (AnchorPane) loader.load();
-        ventanaRecuperarContraseñaController recuperarContraseñaControllerr = loader.getController();
+        VentanaRecuperarContraseñaController recuperarContraseñaControllerr = loader.getController();
         recuperarContraseñaControllerr.setApp(app);
         Scene scene = new Scene(anchorPane);
         Stage stage = new Stage();
@@ -156,24 +155,24 @@ public class ventanaLoginController {
         this.app = aplicacion;
     }
 
-    public void initPrincipal(Stage stage, ventanaPrincipalController principalController) {
+    public void initPrincipal(Stage stage, VentanaPrincipalController principalController) {
         this.principioController = principalController;
         this.stage = stage;
     }
 
-    public void initPublicaciones(Stage stage, ventanaPublicacionesController publicacionesController) {
+    public void initPublicaciones(Stage stage, VentanaPublicacionesController publicacionesController) {
         this.publicacionesController = publicacionesController;
         this.stage = stage;
     }
 
 
-    public void initRegistro(Stage stage, ventanaRegistroController ventanaRegistroController) {
+    public void initRegistro(Stage stage, VentanaRegistroController ventanaRegistroController) {
         this.ventanaRegistroController = ventanaRegistroController;
         this.stage = stage;
     }
 
 
-    public void initRecuperar(Stage stage, ventanaRecuperarContraseñaController ventanaRecuperarContraseñaController) {
+    public void initRecuperar(Stage stage, VentanaRecuperarContraseñaController ventanaRecuperarContraseñaController) {
         this.ventanaRecuperarContraseñaController = ventanaRecuperarContraseñaController;
         this.stage = stage;
     }

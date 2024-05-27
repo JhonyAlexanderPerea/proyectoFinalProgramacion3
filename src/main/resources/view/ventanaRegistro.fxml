@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaRegistroController">
+<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentanaRegistroController">
    <children>
       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="3.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
          <image>

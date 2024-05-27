@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ventanaPrincipalController">
+<AnchorPane prefHeight="350.0" prefWidth="650.0" style="-fx-background-color: #4d82bc;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VentanaPrincipalController">
    <children>
       <Label layoutX="239.0" layoutY="41.0" prefHeight="54.0" prefWidth="171.0" text="NEWS UQ">
          <font>

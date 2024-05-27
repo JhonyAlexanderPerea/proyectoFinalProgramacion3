@@ -1,6 +1,6 @@
 package application;
 
-import controller.ventanaPrincipalController;
+import controller.VentanaPrincipalController;
 import jakarta.mail.MessagingException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -31,14 +31,14 @@ public class App extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/view/ventanaPrincipal.fxml"));
             AnchorPane anchorPane = loader.load();
-            ventanaPrincipalController principalController = loader.getController();
+            VentanaPrincipalController principalController = loader.getController();
             principalController.setApp(this);
             Scene scene = new Scene(anchorPane);
             primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/News.png")));
             primaryStage.setScene(scene);
             primaryStage.setTitle("PRINCIPAL");
             primaryStage.show();
-            ventanaPrincipalController controller = loader.getController();
+            VentanaPrincipalController controller = loader.getController();
             controller.setStage1(primaryStage);
         } catch (IOException e) {
             e.printStackTrace();

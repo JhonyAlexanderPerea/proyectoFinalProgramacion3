@@ -1,13 +1,14 @@
 package application;
 
-//import com.gluonhq.charm.glisten.application.MobileApplication;
 import controller.ventanaPrincipalController;
+import jakarta.mail.MessagingException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class App extends Application {
@@ -52,7 +53,5 @@ public class App extends Application {
         this.primaryStage = primaryStage;
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) throws MessagingException, IOException {launch(args);}
 }

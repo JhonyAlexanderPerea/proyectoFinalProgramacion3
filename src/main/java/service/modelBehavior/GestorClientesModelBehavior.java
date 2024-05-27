@@ -22,9 +22,9 @@ public class GestorClientesModelBehavior extends ModelBehavior{
         long idCliente = 0;
 
         try (ClienteCsvDao clienteCsvDao = new ClienteCsvDao()) {
-            String abr = StringUtil.obtenerAbreviatura(cliente.getNombre());
+            String nombre = StringUtil.obtenerAbreviatura(cliente.getNombre());
 
-            if (!ArchivosUtil.crearCarpetaDeCliente(abr)) {
+            if (!ArchivosUtil.crearCarpetaDeCliente(nombre)) {
                 logAdvertencia("No se pudo crear correctamente las carpetas asociadas al cliente");
             }
 

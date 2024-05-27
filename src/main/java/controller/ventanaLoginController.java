@@ -66,7 +66,6 @@ public class ventanaLoginController {
 
     @FXML
     void iniciarSesion(ActionEvent event) throws IOException {
-        if (seguridad.validarUsuario(txtUsuario.getText(),txtContraseña.getText())) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("/view/ventanaPublicaciones.fxml"));
             AnchorPane anchorPane = (AnchorPane) loader.load();
@@ -80,12 +79,10 @@ public class ventanaLoginController {
             publicacionesController.init(stage, this);
             stage.show();
             this.stage.close();
-        }
-        else {
-            JOptionPane.showMessageDialog(null,"Usuario no encontrado");
-        }
-
     }
+
+
+
     @FXML
     public void abrirViewPrincipal(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();

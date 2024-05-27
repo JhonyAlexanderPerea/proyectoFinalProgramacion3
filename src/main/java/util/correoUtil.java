@@ -20,8 +20,8 @@ public class correoUtil {
     public static void sendEmail(String[] toAddress, String subject, MimeBodyPart... messageBodyParts)
             throws AddressException, MessagingException, IOException {
 
-        final String username = "correo";
-        final String password = "codigo";
+        final String username = "noticiosouq@gmail.com";
+        final String password = "esvo rkht udjp pnju";
 
         Message msg = new MimeMessage(getCreateSession(username,password));
 
@@ -64,9 +64,8 @@ public class correoUtil {
         return prop;
     }
 
-    public void enviarCorreo(String correo,String nombre, String codigoRecuperacion) throws MessagingException, IOException {
+    public static void enviarCorreo(String correo,String nombre, String codigoRecuperacion) throws MessagingException, IOException {
         String[] listaCorreos = {correo};
-        MimeBodyPart messageBodyPart = new MimeBodyPart();
         StringBuilder sb = new StringBuilder();
         sb.append("<p>");
         sb.append("Estimado/a, ");
@@ -77,7 +76,10 @@ public class correoUtil {
         sb.append("Este es tu para recuperar tu cuenta ");
         sb.append(codigoRecuperacion);
 
+        MimeBodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setContent(sb.toString(), "text/html");
         sendEmail(listaCorreos,"Codigo de recuperacion",messageBodyPart);
     }
+
+
 }

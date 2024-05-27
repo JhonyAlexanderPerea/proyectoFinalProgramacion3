@@ -1,11 +1,15 @@
 package util;
 
-import java.io.File;
+import java.io.*;
+
 import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
 import model.Articulo;
 import com.opencsv.CSVWriter;
 
@@ -120,7 +124,5 @@ public class ArchivosUtil {
             e.printStackTrace();
         }
     }
-
-
 
 }

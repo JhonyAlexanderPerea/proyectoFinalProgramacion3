@@ -1,6 +1,6 @@
 package controller;
 
-import networking.ClienteArchivos;
+import networking.PublicadorArchivos;
 import networking.ServidorArchivos;
 import application.App;
 import javafx.event.ActionEvent;
@@ -62,7 +62,7 @@ public class ventanaPublicacionesController {
         int puerto = 5000; // Puerto del servidor
 
         // Crear cliente de archivos y establecer la conexión con el servidor
-        ClienteArchivos cliente = new ClienteArchivos(direccionIP, puerto);
+        PublicadorArchivos cliente = new PublicadorArchivos(direccionIP, puerto);
         try {
             // Llamar al método para enviar el archivo
             cliente.enviarArchivo(new File(nombreArchivo));

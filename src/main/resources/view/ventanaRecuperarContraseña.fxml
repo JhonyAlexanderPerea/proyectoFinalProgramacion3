@@ -27,12 +27,12 @@
             <Font name="Malgun Gothic" size="22.0" />
          </font>
       </Label>
-      <Button fx:id="btnEnviarCodigo" layoutX="250.0" layoutY="233.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: Black; -fx-background-radius: 0; -fx-border-color: white;" text="Enviar Codigo" textFill="WHITE">
+      <Button fx:id="btnEnviarCodigo" layoutX="252.0" layoutY="265.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="146.0" style="-fx-background-color: Black; -fx-background-radius: 0; -fx-border-color: white;" text="Enviar Codigo" textFill="WHITE">
          <font>
             <Font name="Malgun Gothic" size="17.0" />
          </font>
       </Button>
-      <GridPane layoutX="36.0" layoutY="114.0" prefHeight="74.0" prefWidth="574.0">
+      <GridPane layoutX="36.0" layoutY="162.0" prefHeight="82.0" prefWidth="574.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="188.4" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="386.0" />
@@ -59,5 +59,6 @@
             </TextField>
          </children>
       </GridPane>
+      <ImageView fitHeight="49.0" fitWidth="199.0" layoutX="405.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
